@@ -1,6 +1,6 @@
-from pydantic_settings import BaseSettings,SettingsConfigDict
-class Settings(BaseSettings):
- app_name:str='MediCare AI'; secret_key:str='dev-only-change-me'; ai_api_key:str|None=None; ai_api_base_url:str='https://api.openai.com/v1'; ai_model:str='gpt-4o-mini'; cors_origins:str='*'; model_config=SettingsConfigDict(env_file='.env',extra='ignore')
- @property
- def cors_list(self): return [x.strip() for x in self.cors_origins.split(',') if x.strip()]
+import os
+from dataclasses import dataclass
+@dataclass(frozen=True)
+class Settings:
+    secret_key:str=os.getenv('SECRET_KEY','change-me-in-production'); access_token_minutes:int=int(os.getenv('ACCESS_TOKEN_MINUTES','1440')); ai_api_key:str=os.getenv('AI_API_KEY',''); ai_api_base_url:str=os.getenv('AI_API_BASE_URL','https://api.openai.com/v1'); ai_model:str=os.getenv('AI_MODEL','gpt-4o-mini'); cors_origins:str=os.getenv('CORS_ORIGINS','http://localhost:8081,http://localhost:19006')
 settings=Settings()

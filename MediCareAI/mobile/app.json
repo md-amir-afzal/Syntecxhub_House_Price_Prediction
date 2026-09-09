@@ -1,1 +1,13 @@
-{"expo":{"name":"MediCare AI","slug":"medicare-ai","version":"0.2.0","orientation":"portrait","scheme":"medicareai","userInterfaceStyle":"light","plugins":["expo-router","expo-speech","expo-image-picker"],"android":{"package":"com.medicareai.app","permissions":["RECORD_AUDIO"],"adaptiveIcon":{"backgroundColor":"#EAF8F5"}},"ios":{"bundleIdentifier":"com.medicareai.app","infoPlist":{"NSMicrophoneUsageDescription":"MediCare AI uses the microphone so you can describe symptoms by voice.","NSPhotoLibraryUsageDescription":"MediCare AI lets you attach a photo of a visible symptom for optional future review."}}}}
+{
+  "expo": {
+    "name": "MediCare AI",
+    "slug": "medicare-ai",
+    "version": "0.3.0",
+    "orientation": "portrait",
+    "scheme": "medicareai",
+    "userInterfaceStyle": "light",
+    "plugins": ["expo-router","expo-speech","expo-audio"],
+    "android": {"package":"com.medicareai.app","adaptiveIcon":{"backgroundColor":"#EAF8F5"},"permissions":["RECORD_AUDIO"]},
+    "ios": {"bundleIdentifier":"com.medicareai.app","infoPlist":{"NSMicrophoneUsageDescription":"MediCare AI uses the microphone so you can describe symptoms in Hindi, English or Hinglish."}}
+  }
+}
