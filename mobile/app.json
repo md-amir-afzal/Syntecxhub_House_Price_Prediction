@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "MediCare AI",
+    "slug": "medicare-ai",
+    "version": "0.2.0",
+    "orientation": "portrait",
+    "scheme": "medicareai",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow MediCare AI to access a photo you choose for optional symptom review."
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Allow MediCare AI to access your microphone so you can describe symptoms by voice.",
+          "recordAudioAndroid": true,
+          "enableBackgroundRecording": false
+        }
+      ],
+      "expo-asset",
+      "expo-font"
+    ],
+    "android": {
+      "package": "com.medicareai.app",
+      "permissions": [
+        "RECORD_AUDIO"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#EAF8F5"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.medicareai.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "MediCare AI uses the microphone so you can describe symptoms by voice.",
+        "NSPhotoLibraryUsageDescription": "MediCare AI lets you attach a photo of a visible symptom for optional future clinician/AI review."
+      }
+    }
+  }
+}
